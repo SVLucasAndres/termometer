@@ -25,3 +25,23 @@
 #container a {
   text-decoration: none;
 }
+.card{
+  padding:1rem;
+  margin:1rem;
+}
+ion-range::part(pin) {
+  background: #014b04;
+  color:#00ff0d;
+}
+ion-range::part(pin)::before {
+  content: none;
+}
+ion-range::part(bar) {
+  background: #b1ffa6;
+}
+ion-range::part(bar-active) {
+  background: #006329;
+}
+ion-range::part(knob) {
+  background: #196b00;
+}

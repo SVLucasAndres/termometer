@@ -1,20 +1,35 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Temperatura
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-card class="card">
+    <div style="display: flex; align-items: center;">
+      <ion-card-title>Temperatura: </ion-card-title>
+      <lord-icon
+        *ngIf="!state"
+        src="https://cdn.lordicon.com/dangivhk.json"
+        trigger="loop"
+        delay="2000"
+        stroke="bold"
+        colors="primary:#121331,secondary:#66ee78"
+        style="width:50px;height:50px">
+      </lord-icon>
+      <lord-icon
+        *ngIf="state"
+        src="https://cdn.lordicon.com/jxzkkoed.json"
+        trigger="loop"
+        delay="1000"
+        style="width:50px;height:50px">
+      </lord-icon>
+    </div>
+    <ion-range label="Temperatura" [min]="-100" [max]="100" [pin]="true" [pinFormatter]="pinFormatter" (ionKnobMoveEnd)="onIonKnobMoveEnd($event)">
+      <ion-icon slot="start" name="snow-outline"></ion-icon>
+      <ion-icon slot="end" name="sunny-outline"></ion-icon>
+    </ion-range>
+  </ion-card>
 </ion-content>
